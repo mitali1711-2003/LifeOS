@@ -517,3 +517,53 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+/* ============================================
+   MOBILE HEADER
+   ============================================ */
+.mobile-header {
+  background: rgba(7, 7, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 1023px) {
+  /* Scale down floating orbs on tablets/mobile */
+  .orb-1 { width: 200px; height: 200px; }
+  .orb-2 { width: 150px; height: 150px; }
+  .orb-3 { width: 180px; height: 180px; }
+}
+
+@media (max-width: 640px) {
+  /* Further reduce orbs on small phones */
+  .orb-1 { width: 120px; height: 120px; opacity: 0.15; }
+  .orb-2 { width: 100px; height: 100px; opacity: 0.1; }
+  .orb-3 { display: none; }
+
+  /* Reduce glass card border radius on mobile for tighter spacing */
+  .glass-card { border-radius: 16px; }
+
+  /* Smaller buttons on mobile */
+  .btn-gradient { border-radius: 12px; }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .floating-orb,
+  .cube,
+  .cube-sm,
+  .orbit-ring,
+  .dna-dot,
+  .particle,
+  .logo-3d-inner,
+  .pulse-dot {
+    animation: none !important;
+  }
+  .app-background::before {
+    animation: none !important;
+  }
+}

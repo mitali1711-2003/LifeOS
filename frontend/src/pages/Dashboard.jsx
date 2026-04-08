@@ -84,9 +84,9 @@ export default function Dashboard() {
           HERO SECTION — 3D scene + animated text + orbit rings
           =================================================== */}
       <div className="relative mb-10 overflow-hidden">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
           {/* Left: text + stats */}
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="pulse-dot"></div>
               <span className="text-[10px] text-emerald-400 uppercase tracking-[0.2em] font-semibold">
@@ -94,7 +94,7 @@ export default function Dashboard() {
               </span>
             </div>
 
-            <h1 className="text-4xl font-black gradient-text-glow mb-2 leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black gradient-text-glow mb-2 leading-tight">
               Welcome to<br />LifeOS
             </h1>
             <p className="text-sm text-gray-500 mb-8 max-w-md">
@@ -103,7 +103,7 @@ export default function Dashboard() {
             </p>
 
             {/* Quick stats with animated counters + progress rings */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
               <ProgressRing progress={habitPercent} size={70} strokeWidth={5} color="#667eea">
                 <div className="text-center">
                   <p className="text-sm font-bold text-white">
@@ -170,9 +170,9 @@ export default function Dashboard() {
           FEATURED AI SECTION — glowing card spotlight
           =================================================== */}
       <GlowingCard className="mb-8">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="scene-3d" style={{ width: 50, height: 50 }}>
+            <div className="scene-3d hidden sm:block" style={{ width: 50, height: 50 }}>
               <div className="cube cube-sm">
                 <div className="cube-face cube-face-front">🧠</div>
                 <div className="cube-face cube-face-back">⚡</div>
@@ -183,19 +183,19 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">AI Command Center</h3>
-              <p className="text-xs text-gray-400">
-                <AnimatedCounter target={data?.study_summary?.total_flashcards || 0} /> flashcards generated
+              <h3 className="text-sm sm:text-base font-bold text-white">AI Command Center</h3>
+              <p className="text-[10px] sm:text-xs text-gray-400">
+                <AnimatedCounter target={data?.study_summary?.total_flashcards || 0} /> flashcards
                 {' · '}
-                <AnimatedCounter target={data?.journal_summary?.total_entries || 0} /> journal entries
+                <AnimatedCounter target={data?.journal_summary?.total_entries || 0} /> entries
                 {' · '}
-                <AnimatedCounter target={data?.bookmark_summary?.total_bookmarks || 0} /> bookmarks saved
+                <AnimatedCounter target={data?.bookmark_summary?.total_bookmarks || 0} /> bookmarks
               </p>
             </div>
           </div>
           <button
             onClick={() => navigate('/study')}
-            className="btn-gradient px-5 py-2.5 text-xs"
+            className="btn-gradient px-5 py-2.5 text-xs w-full sm:w-auto"
           >
             Open AI Studio
           </button>

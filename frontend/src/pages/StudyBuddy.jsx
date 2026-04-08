@@ -108,7 +108,7 @@ export default function StudyBuddy() {
 
       {/* Stats bar */}
       {stats && stats.total_notes > 0 && (
-        <div className="grid grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           <div className="text-center p-3 bg-indigo-50 rounded-lg">
             <p className="text-lg font-bold text-indigo-600">{stats.total_notes}</p>
             <p className="text-xs text-gray-500">Notes</p>
@@ -130,7 +130,7 @@ export default function StudyBuddy() {
 
       {/* Due for review reminder */}
       {stats && stats.due_for_review > 0 && (
-        <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg mb-6 flex items-center justify-between">
+        <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <span className="text-sm text-amber-700">
             ⏰ {stats.due_for_review} flashcard{stats.due_for_review !== 1 ? 's' : ''} due for review!
           </span>

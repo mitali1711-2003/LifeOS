@@ -80,7 +80,7 @@ export default function Learning() {
       </div>
 
       {/* Filter bar */}
-      <div className="flex gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4">
         {filters.map((f) => (
           <button
             key={f.value}
